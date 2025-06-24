@@ -4,32 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virendar</title>
-    <link rel="icon" href="v.png";>
+    <link rel="icon" href="v.png">
 
     <style>
-        :root{
+        :root {
             --base-colorH: linear-gradient(to right, #4CAF50, #2E7D32);
             --base-colorF: linear-gradient(to right, #000000, #000000, #000000);
-            --text-color :  #333;
-            --secondary-text:  #4CAF50;
+            --text-color: #333;
+            --secondary-text: #4CAF50;
             --white-bg: white;
             --link: blue;
-            --box-shadow :rgba(0,0,0,0.1);
+            --box-shadow: rgba(0, 0, 0, 0.1);
             --hover-shadow: rgba(1, 57, 16, 0.617);
             --header: url(morning3.jpg);
-        } 
-        
-        .darkmode{
+        }
+
+        .darkmode {
             --base-colorH: linear-gradient(to right, #4CAF50, #2E7D32);
             --base-colorF: linear-gradient(to right, #000000, #000000, #000000);
-            --text-color :  #dedede;
-            --secondary-text:  #4CAF50;
+            --text-color: #dedede;
+            --secondary-text: #4CAF50;
             --white-bg: rgb(0, 0, 0);
             --link: #5f97e6;
-            --box-shadow :rgb(0, 0, 0,0.1);
-            --hover-shadow:rgb(177, 255, 8);
-            --header: url(night.jpeg);
+            --box-shadow: rgb(0, 0, 0, 0.1);
+            --hover-shadow: rgb(31, 168, 29);
+            --header: url(night.jpg);
         }
+
         #theme-switch {
             height: 50px;
             width: 50px;
@@ -47,15 +48,15 @@
             fill: var(--text-color);
         }
 
-        #theme-switch #light{
-            display: none;
-        }
-        
-        .darkmode #theme-switch #dark{
+        #theme-switch #light {
             display: none;
         }
 
-        .darkmode #theme-switch #light{
+        .darkmode #theme-switch #dark {
+            display: none;
+        }
+
+        .darkmode #theme-switch #light {
             display: block;
         }
 
@@ -68,52 +69,56 @@
             overflow-x: hidden;
             font-weight: bolder;
         }
-    
+
         header {
-            text-shadow: 3px 3px 5px rgb(255, 255, 255), -4px -4px 5px rgb(255, 255, 255) ;
-            text-shadow: rgb(255, 255, 255);
+            text-shadow: 3px 3px 10px var(--white-bg);
             height: 135px;
-            color: hsl(0, 0%, 0%);
+            color: var(--text-color);
             padding: 1rem 0;
             text-align: center;
-            
         }
+
         .container {
             width: 80%;
             margin: 0 auto;
             overflow: hidden;
             padding: 2rem 0;
         }
+
         .section {
             margin-bottom: 2rem;
         }
+
         .section h2 {
-            color:  var(--secondary-text);
+            color: var(--secondary-text);
             border-bottom: 2px solid var(--secondary-text);
             padding-bottom: 0.5rem;
             margin-bottom: 1rem;
         }
+
         .section p {
             line-height: 1.6;
         }
 
-        a{
+        a {
             color: var(--link);
         }
-        
+
         footer {
             display: block;
             background: var(--base-colorF);
-            color:  #dedede;
+            color: #dedede;
             text-align: center;
             padding: 1rem 0;
             margin-top: 2rem;
             animation: slideInFromBottom 1s ease-in-out;
         }
+
         .skills {
             display: flex;
             flex-wrap: wrap;
         }
+
         .skills div {
             background: var(--secondary-text);
             color: var(--white-bg);
@@ -123,132 +128,158 @@
             animation: bounceIn 2s ease-in;
             transition: transform 0.3s ease-in-out;
         }
-        header,.skills div {
+
+        header,
+        .skills div {
             background: var(--base-colorH);
         }
-        .skills div:hover{
-            transform: scale(1.1); 
+
+        .skills div:hover {
+            transform: scale(1.1);
             cursor: pointer;
         }
+
         @keyframes slideInFromTop {
             from {
                 transform: translateY(-100%);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
             }
         }
+
         @keyframes slideInFromBottom {
             from {
                 transform: translateY(100%);
                 opacity: 0;
             }
+
             to {
                 transform: translateY(0);
                 opacity: 1;
             }
         }
+
         @keyframes bounceIn {
             0% {
                 transform: scale(0.5);
                 opacity: 0;
             }
+
             60% {
                 transform: scale(1.05);
                 opacity: 1;
             }
+
             80% {
                 transform: scale(0.9);
             }
+
             100% {
                 transform: scale(1);
             }
         }
-        @media screen and (max-width:400px){
-            .container{
-                align-content:  center;
+
+        @media screen and (max-width: 400px) {
+            .container {
+                align-content: center;
             }
         }
 
-        
-        .card {
-        background: white;
-        border-radius: 0.7rem;
-        box-shadow: 0 4px 10px var(--box-shadow);
-        overflow: hidden;
-        width: 300px;
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        cursor: pointer;
-     
-        }
-        .card:hover {
-        transform: scale(1.03);
-        box-shadow: 0 7px 25px var(--hover-shadow);
-        }
-        .card img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        }
-        .card-content {
-        padding: 1rem 1.5rem;
-        }
-        .card-title {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        color: #333;
-        }
-        .card ul {
-        padding-left: 1rem;
-        color: #555;
-        }
-        .card ul li {
-        margin-bottom: 0.4rem;
+        @media screen and (max-width: 768px) {
+            .card {
+                width: 100%; /* Stack cards on smaller screens */
+            }
         }
 
         .card-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        justify-content: center;
-        padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            padding: 2rem;
         }
-        small{
+
+        .card {
+            background: white;
+            border-radius: 0.7rem;
+            box-shadow: 0 4px 10px var(--box-shadow);
+            overflow: hidden;
+            width: 260px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 7px 25px var(--hover-shadow);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1rem 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .card ul {
+            padding-left: 1rem;
+            color: #555;
+        }
+
+        .card ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        small {
             color: #333;
         }
     </style>
 </head>
-<body >
-  
-    <header style="background-image: var(--header);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
-            background-size: cover;
-        ">
 
+<body>
+    <header style="background-image: var(--header);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;">
         <h1>Virendar</h1>
         <p>BCA Student at Amrita University, Mysore</p>
         <button id="theme-switch">
-            <svg id="dark" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
-    
-            <svg id="light" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
-        </button> 
+            <svg id="dark" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/>
+            </svg>
+            <svg id="light" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                <path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/>
+            </svg>
+        </button>
     </header>
 
-
     <div class="container">
+        <!-- About Section -->
         <div class="section" id="about">
             <h2>About Me</h2>
             <p>
-                Hey there! I'm a 3<sup>rd</sup> year student pursuing <b>Bachelor of Computer Applications (BCA)</b> at Amrita University, Mysore, with a solid CGPA of 9.41. I’m passionate about computer science and have a strong grasp of the fundamentals, including Operating Systems, Computer Architecture, C, Java, SQL, DBMS, Computer Networks, and web development. While my web development skills are currently at the foundational level, I am dedicated to continuously improving and expanding my expertise.<br><br>
+                Hey there! I'm a 3<sup>rd</sup> year student pursuing <b>Bachelor of Computer Applications (BCA)</b> at Amrita University, Mysore, with a solid CGPA of 9.41. I’m passionate about computer science and have a strong grasp of the fundamentals, including Operating Systems, Computer Architecture, C, Java, SQL, DBMS, Computer Networks, and web development. While my web development skills are currently at the foundational level, I am dedicated to continuously improving and expanding my expertise.
+                <br><br>
                 Laying the groundwork now, sharpening expertise for what’s next!
             </p>
         </div>
 
+        <!-- Skills Section -->
         <div class="section" id="skills">
             <h2>Skills</h2>
             <div class="skills">
@@ -265,208 +296,207 @@
                 <div>Software Engineering</div>
             </div>
         </div>
-        
+
+        <!-- Experience Section -->
         <div class="section" id="experience">
             <h2>Smart India Hackathon (SIH) 2024</h2>
             <p><b>Problem Statement:</b> AI-Powered Student Assistance Chatbot for the Department of Technical Education, Government of Rajasthan.</p>
             <p><b>Key Takeaways:</b> Developed an AI-powered chatbot and mobile app, enhancing problem-solving, teamwork, and software development skills.</p>
         </div>
 
+        <!-- Workshops Section -->
         <div class="section" id="workshops">
             <h2>Workshops</h2>
             <p><b>Competitive Programming Workshop:</b> Learned algorithm optimization, dynamic programming, and efficient coding techniques for problem-solving.</p>
             <p><b>Blockchain & Web3 Workshop:</b> Gained insights into decentralized technologies, smart contracts, and their applications in the digital economy.</p>
         </div>
 
+        <!-- Tech Talks Section -->
         <div class="section" id="tech-talks">
             <h2>Tech Talks</h2>
             <p><b>Neural Networks:</b> Attended a session on 'Overview of Neural Networks in Learning Paradigms' by Charles Jeyaseelan, learning about AI and deep learning models.</p>
         </div>
 
+        <!-- Social Volunteering Section -->
         <div class="section" id="social-volunteering">
             <h2>Social Volunteering</h2>
             <p><b>Nele Ashrama Experience:</b> Conducted a session on 'Contentment for Joyful Life' at Nele Ashrama, emphasizing gratitude, well-being, and self-awareness.</p>
         </div>
 
+        <!-- Certificates Section (Cards) -->
+        <div class="section" id="certificates" style="font-size:smaller;">
+            <h2>Certificates</h2>
+            <div class="certificates">
+                <div class="card-grid">
 
-        <div class="section" id="certificates">
-        <h2>Certificates</h2>
-        <div class="certificates">
-            <div class="card-grid">
+                    <a href="https://www.hackerrank.com/certificates/iframe/50d4e7522c8c" style="text-decoration: none; color: inherit;" target="_blank">
+                        <div class="card">
+                            <img src="SQL.png" alt="SQL" width="500px">
+                            <div class="card-content">
+                                <div class="card-title">SQL (Basic)</div>
+                                <ul>
+                                    <li>Selected and filtered data with basic SQL queries</li>
+                                    <li>Created and modified tables using DDL commands</li>
+                                    <li>Applied aggregate functions and joins</li>
+                                </ul>
+                                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
+                                    <img src="HackerRank_Icon.png" alt="HackerRank" style="width: 20px; height: 20px; object-fit: contain;">
+                                    <small style="font-size: 0.68rem;"><pre> HackerRank</pre></small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
 
-            <a href="https://www.hackerrank.com/certificates/iframe/50d4e7522c8c" style="text-decoration: none; color: inherit;" target="_blank">
-            <div class="card">
-                <img src="SQL.png" alt="SQL" width="500px">
-                <div class="card-content">
-                <div class="card-title">SQL (Basic)</div>
-                <ul>
-                   <li>Selected and filtered data with basic SQL queries</li>
-                   <li>Created and modified tables using DDL commands</li>
-                   <li>Applied aggregate functions and joins</li>
+                    <a href="https://certificates.mooc.fi/validate/ytd7m39iil" style="text-decoration: none; color: inherit;" target="_blank">
+                        <div class="card">
+                            <img src="Elements of AI.png" alt="Elements of AI" width="500px">
+                            <div class="card-content">
+                                <div class="card-title">Elements of AI</div>
+                                <ul>
+                                    <li>Learned core AI concepts and problem-solving</li>
+                                    <li>Explored machine learning and neural networks basics</li>
+                                    <li>Examined real-world AI applications</li>
+                                </ul>
+                                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.7rem;">
+                                    <img src="Helsinki-logo.png" alt="University of Helsinki" style="width: 30px; height: 30px; object-fit: contain;">
+                                    <small style="font-size: 0.68rem;">University of Helsinki</small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
 
-                </ul>
-                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
-                    <img src="HackerRank_Icon.png" alt="HackerRank" style="width: 20px; height: 20px; object-fit: contain;">
-                    <small style="font-size: 0.68rem;">Hacker Rank</small>
-                </div>
+                    <a href="https://www.linkedin.com/in/virendar-d-seervi-005627288/details/certifications/1742304593944/single-media-viewer/?profileId=ACoAAEXcGUUBl-8TfAbHjknq5KKJuqsoP5fJdwg" style="text-decoration: none; color: inherit;" target="_blank">
+                        <div class="card">
+                            <img src="AWS AI.png" alt="Fundamentals of Machine Learning and Artificial Intelligence" width="500px">
+                            <div class="card-content">
+                                <div class="card-title">Fundamentals of ML & AI</div>
+                                <ul>
+                                    <li>Understood ML/AI core concepts</li>
+                                    <li>Explored supervised, unsupervised learning</li>
+                                    <li>Identified AWS AI/ML services</li>
+                                </ul>
+                                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.2rem;">
+                                    <img src="aws.png" alt="AWS" style="width: 25px; margin-top: 5px; height: 25px; object-fit: contain;">
+                                    <small style="font-size: 0.68rem; margin-left: 4px;">Amazon Web Services</small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/virendar-d-seervi-005627288/details/certifications/1744618880497/single-media-viewer/?profileId=ACoAAEXcGUUBl-8TfAbHjknq5KKJuqsoP5fJdwg" style="text-decoration: none; color: inherit;" target="_blank">
+                        <div class="card">
+                            <img src="Js.png" alt="JavaScript" width="500px">
+                            <div class="card-content">
+                                <div class="card-title">JavaScript</div>
+                                <ul>
+                                    <li>Learned JavaScript data types and syntax</li>
+                                    <li>Studied control flow and functions</li>
+                                    <li>Reviewed browser DOM and event basics</li>
+                                </ul>
+                                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
+                                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
+                                    <small style="font-size: 0.68rem;">Springboard</small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/virendar-d-seervi-005627288/details/certifications/1738123985525/single-media-viewer/?profileId=ACoAAEXcGUUBl-8TfAbHjknq5KKJuqsoP5fJdwg" style="text-decoration: none; color: inherit;" target="_blank">
+                        <div class="card">
+                            <img src="se.png" alt="Software Engineering" width="500px">
+                            <div class="card-content">
+                                <div class="card-title">Software Engineering</div>
+                                <ul>
+                                    <li>Learned Agile software development fundamentals</li>
+                                    <li>Applied software engineering principles</li>
+                                    <li>Explored DevOps and project workflows</li>
+                                </ul>
+                                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
+                                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
+                                    <small style="font-size: 0.68rem;">Springboard</small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/virendar-d-seervi-005627288/details/certifications/1729975269708/single-media-viewer/?profileId=ACoAAEXcGUUBl-8TfAbHjknq5KKJuqsoP5fJdwg" style="text-decoration: none; color: inherit;" target="_blank">
+                        <div class="card">
+                            <img src="dt.png" alt="Design Thinking" width="500px">
+                            <div class="card-content">
+                                <div class="card-title">Design Thinking</div>
+                                <ul>
+                                    <li>Empathized with users and defined problem statements</li>
+                                    <li>Ideated and prototyped solution concepts</li>
+                                    <li>Tested prototypes and incorporated user feedback</li>
+                                </ul>
+                                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
+                                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
+                                    <small style="font-size: 0.68rem;">Springboard</small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/virendar-d-seervi-005627288/details/certifications/1729941901102/single-media-viewer/?profileId=ACoAAEXcGUUBl-8TfAbHjknq5KKJuqsoP5fJdwg" style="text-decoration: none; color: inherit;" target="_blank">
+                        <div class="card">
+                            <img src="is.png" alt="Interactive Skill" width="500px">
+                            <div class="card-content">
+                                <div class="card-title">Interactive Skills</div>
+                                <ul>
+                                    <li>Learned how to create interactive content</li>
+                                    <li>Studied basic user engagement techniques</li>
+                                    <li>Understood using feedback to improve learning</li>
+                                </ul>
+                                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
+                                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
+                                    <small style="font-size: 0.68rem;">Springboard</small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/virendar-d-seervi-005627288/details/certifications/1729950355614/single-media-viewer/?profileId=ACoAAEXcGUUBl-8TfAbHjknq5KKJuqsoP5fJdwg" style="text-decoration: none; color: inherit;" target="_blank">
+                        <div class="card">
+                            <img src="ps.png" alt="Presentation Skills" width="500px">
+                            <div class="card-content">
+                                <div class="card-title">Presentation Skills</div>
+                                <ul>
+                                    <li>Learned how to structure presentations clearly</li>
+                                    <li>Practiced confident speaking and storytelling</li>
+                                    <li>Used visuals to engage audiences</li>
+                                </ul>
+                                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
+                                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
+                                    <small style="font-size: 0.68rem;">Springboard</small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/virendar-d-seervi-005627288/details/certifications/1729942289744/single-media-viewer/?profileId=ACoAAEXcGUUBl-8TfAbHjknq5KKJuqsoP5fJdwg" style="text-decoration: none; color: inherit;" target="_blank">
+                        <div class="card">
+                            <img src="tm.png" alt="Time management" width="500px">
+                            <div class="card-content">
+                                <div class="card-title">Time management</div>
+                                <ul>
+                                    <li>Planned days using priority and time-block methods</li>
+                                    <li>Organized tasks with calendars and to-do lists</li>
+                                    <li>Improved focus through clear goal setting</li>
+                                </ul>
+                                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
+                                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
+                                    <small style="font-size: 0.68rem;">Springboard</small>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
                 </div>
             </div>
-            </a>
-
-            <a href="https://certificates.mooc.fi/validate/ytd7m39iil" style="text-decoration: none; color: inherit;" target="_blank">
-            <div class="card">
-                <img src="Elements of AI.png" alt="Elements of AI" width="500px">
-                <div class="card-content">
-                <div class="card-title">Elements of AI</div>
-                <ul>
-                    <li>Learned core AI concepts and problem-solving</li>
-                    <li>Explored machine learning and neural networks basics</li>
-                    <li>Examined real-world AI applications</li>
-                </ul>
-                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.4rem;">
-                    <img src="Helsinki-logo.png" alt="University of Helsinki" style="width: 30px; height: 30px; object-fit: contain;">
-                    <small style="font-size: 0.68rem;">University of Helsinki</small>
-                </div>
-                </div>
-            </div>
-            </a>
-
-            <a href="https://www.linkedin.com/in/virendar-d-seervi-005627288/details/certifications/1742304593944/single-media-viewer/?profileId=ACoAAEXcGUUBl-8TfAbHjknq5KKJuqsoP5fJdwg" style="text-decoration: none; color: inherit;" target="_blank">
-            <div class="card">
-                <img src="AWS AI.png" alt=" Fundamentals of Machine Learning and Artificial Intelligence" width="500px">
-                <div class="card-content">
-                <div class="card-title">Fundamentals of ML & AI</div>
-                <ul>
-                    <li>Understood ML/AI core concepts</li>
-                    <li>Explored generative, supervised, unsupervised learning</li>
-                    <li>Identified AWS AI/ML services</li>
-                </ul>
-                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.3rem;">
-                    <img src="aws.png" alt="AWS" style="width: 25px; margin-top: 3px; height: 25px; object-fit: contain;">
-                    <small style="font-size: 0.68rem; margin-left:4px;">Amazon Web Services</small>
-                </div>
-                </div>
-            </div>
-            </a>
-
-             <a href="https://www.linkedin.com/in/virendar-d-seervi-005627288/details/certifications/1744618880497/single-media-viewer/?profileId=ACoAAEXcGUUBl-8TfAbHjknq5KKJuqsoP5fJdwg" style="text-decoration: none; color: inherit;" target="_blank">
-            <div class="card">
-                <img src="Js.png" alt="JavaScript" width="500px">
-                <div class="card-content">
-                <div class="card-title">JavaScript</div>
-                <ul>
-                   <li>Learned JavaScript data types and syntax</li>
-                    <li>Studied control flow and functions</li>
-                    <li>Reviewed browser DOM and event basics</li>
-                </ul>
-                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
-                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
-                    <small style="font-size: 0.68rem;">Springboard</small>
-                </div>
-                </div>
-            </div>
-            </a>
-
-
-            <a href="https://www.linkedin.com/in/virendar-d-seervi-005627288/details/certifications/1738123985525/single-media-viewer/?profileId=ACoAAEXcGUUBl-8TfAbHjknq5KKJuqsoP5fJdwg" style="text-decoration: none; color: inherit;" target="_blank">
-            <div class="card">
-                <img src="se.png" alt="Software Engineering" width="500px">
-                <div class="card-content">
-                <div class="card-title">Software Engineering</div>
-                <ul>
-                    <li>Learned Agile software development fundamentals</li>
-                    <li>Applied software engineering principles</li>
-                    <li>Explored DevOps and project workflows</li>
-                </ul>
-                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
-                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
-                    <small style="font-size: 0.68rem;">Springboard</small>
-                </div>
-                </div>
-            </div>
-            </a>
-
-
-            <a href="https://www.linkedin.com/in/virendar-d-seervi-005627288/details/certifications/1729975269708/single-media-viewer/?profileId=ACoAAEXcGUUBl-8TfAbHjknq5KKJuqsoP5fJdwg" style="text-decoration: none; color: inherit;" target="_blank">
-            <div class="card">
-                <img src="dt.png" alt="Design Thinking" width="500px">
-                <div class="card-content">
-                <div class="card-title">Design Thinking</div>
-                <ul>
-                    <li>Empathized with users and defined problem statements</li>
-                    <li>Ideated and prototyped solution concepts</li>
-                    <li>Tested prototypes and incorporated user feedback</li>
-                </ul>
-                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
-                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
-                    <small style="font-size: 0.68rem;">Springboard</small>
-                </div>
-                </div>
-            </div>
-            </a>
-
-
-            <a href="https://www.linkedin.com/in/virendar-d-seervi-005627288/details/certifications/1729941901102/single-media-viewer/?profileId=ACoAAEXcGUUBl-8TfAbHjknq5KKJuqsoP5fJdwg" style="text-decoration: none; color: inherit;" target="_blank">
-            <div class="card">
-                <img src="is.png" alt="Interactive Skill" width="500px">
-                <div class="card-content">
-                <div class="card-title">Interactive Skills </div>
-                <ul>
-                    <li>Learned how to create interactive content</li>
-                    <li>Studied basic user engagement techniques</li>
-                    <li>Understood using feedback to improve learning</li>
-                </ul>
-                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
-                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
-                    <small style="font-size: 0.68rem;">Springboard</small>
-                </div>
-                </div>
-            </div>
-            </a>
-
-            
-            <a href="https://www.linkedin.com/in/virendar-d-seervi-005627288/details/certifications/1729950355614/single-media-viewer/?profileId=ACoAAEXcGUUBl-8TfAbHjknq5KKJuqsoP5fJdwg" style="text-decoration: none; color: inherit;" target="_blank">           
-            <div class="card">
-                <img src="ps.png" alt="Presentation Skills" width="500px">
-                <div class="card-content">
-                <div class="card-title">Presentation Skills</div>
-                <ul>
-                   <li>Learned how to structure presentations clearly</li>
-                    <li>Practiced confident speaking and storytelling</li>
-                    <li>Used visuals to engage audiences</li>
-                </ul>
-                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
-                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
-                    <small style="font-size: 0.68rem;">Springboard</small>
-                </div>
-                </div>
-            </div>
-            </a> 
-
-
-            <a href="https://www.linkedin.com/in/virendar-d-seervi-005627288/details/certifications/1729942289744/single-media-viewer/?profileId=ACoAAEXcGUUBl-8TfAbHjknq5KKJuqsoP5fJdwg" style="text-decoration: none; color: inherit;" target="_blank">
-            <div class="card">
-                <img src="tm.png" alt="Time management" width="500px">
-                <div class="card-content">
-                <div class="card-title">Time management</div>
-                <ul>
-                   <li>Planned days using priority and time-block methods</li>
-                    <li>Organized tasks with calendars and to-do lists</li>
-                    <li>Improved focus through clear goal setting</li>
-
-                </ul>
-                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
-                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
-                    <small style="font-size: 0.68rem;">Springboard</small>
-                </div>
-                </div>
-            </div>
-            </a>
-
-        </div> 
-        </div>
         </div>
 
+
+        <!-- Contact Section -->
         <div class="section" id="contact">
             <h2>Contact</h2>
             <p>Feel free to reach out to me via email at <a href="mailto:virendarvirendar242@gmail.com">virendarvirendar242@gmail.com</a></p>
@@ -485,6 +515,7 @@
             document.body.classList.add('darkmode');
             localStorage.setItem('darkmode','active');
         } 
+
         const disableDarkmode = () => {
             document.body.classList.remove('darkmode');
             localStorage.setItem('darkmode', null);
@@ -492,12 +523,10 @@
 
         if(darkmode === "active") enableDarkmode();
 
-
         themeSwitch.addEventListener("click", () => {
             darkmode = localStorage.getItem('darkmode');
             darkmode !== "active" ? enableDarkmode() : disableDarkmode()
         })
     </script>
-
 </body>
 </html>
