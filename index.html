@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Virendar's Webpage</title>
-    <link rel="icon" href="https://static-00.iconduck.com/assets.00/github-icon-2048x2048-dpporae2.png";>
+    <link rel="icon" href="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_960_720.png";>
 
     <style>
         :root{
@@ -16,6 +16,7 @@
             --link: blue;
             --box-shadow :rgba(0,0,0,0.1);
             --hover-shadow: rgba(1, 57, 16, 0.617);
+            --header: url(morning3.jpg);
         } 
         
         .darkmode{
@@ -27,6 +28,7 @@
             --link: #5f97e6;
             --box-shadow :rgb(0, 0, 0);
             --hover-shadow:rgba(76, 183, 104, 0.641);
+            --header: url(night.jpeg);
         }
         #theme-switch {
             height: 50px;
@@ -68,11 +70,13 @@
         }
     
         header {
-            background: var(--base-colorH);
-            color: hsl(0, 0%, 90%);;
+            text-shadow: 3px 3px 5px rgb(255, 255, 255), -4px -4px 5px rgb(255, 255, 255) ;
+            text-shadow: rgb(255, 255, 255);
+            height: 135px;
+            color: hsl(0, 0%, 0%);
             padding: 1rem 0;
             text-align: center;
-            animation: slideInFromTop 1s ease-in-out;
+            
         }
         .container {
             width: 80%;
@@ -179,7 +183,7 @@
      
         }
         .card:hover {
-        transform: scale(1.015);
+        transform: scale(1.03);
         box-shadow: 0 7px 7px var(--hover-shadow);
         }
         .card img {
@@ -216,7 +220,13 @@
 </head>
 <body >
   
-    <header>
+    <header style="background-image: var(--header);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+        ">
+
         <h1>Virendar</h1>
         <p>BCA Student at Amrita University, Mysore</p>
         <button id="theme-switch">
