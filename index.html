@@ -121,13 +121,14 @@
             padding: 0.5rem 1rem;
             border-radius: 9px;
             animation: bounceIn 2s ease-in;
-            transition: transform 0.25s ease-in-out;
+            transition: transform 0.3s ease-in-out;
         }
         header,.skills div {
             background: var(--base-colorH);
         }
         .skills div:hover{
             transform: scale(1.1); 
+            cursor: pointer;
         }
         @keyframes slideInFromTop {
             from {
@@ -178,7 +179,7 @@
         box-shadow: 0 4px 10px var(--box-shadow);
         overflow: hidden;
         width: 300px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         cursor: pointer;
      
         }
