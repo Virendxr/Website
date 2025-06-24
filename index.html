@@ -14,6 +14,8 @@
             --secondary-text:  #4CAF50;
             --white-bg: white;
             --link: blue;
+            --box-shadow :rgba(0,0,0,0.1);
+            --hover-shadow: rgba(1, 57, 16, 0.617);
         } 
         
         .darkmode{
@@ -23,6 +25,8 @@
             --secondary-text:  #4CAF50;
             --white-bg: rgb(0, 0, 0);
             --link: #5f97e6;
+            --box-shadow :rgb(0, 0, 0);
+            --hover-shadow:rgba(76, 183, 104, 0.641);
         }
         #theme-switch {
             height: 50px;
@@ -52,7 +56,7 @@
         .darkmode #theme-switch #light{
             display: block;
         }
-        
+
         body {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             margin: 0;
@@ -163,6 +167,51 @@
             }
         }
 
+        
+        .card {
+        background: white;
+        border-radius: 0.7rem;
+        box-shadow: 0 4px 10px var(--box-shadow);
+        overflow: hidden;
+        width: 300px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+     
+        }
+        .card:hover {
+        transform: scale(1.015);
+        box-shadow: 0 7px 7px var(--hover-shadow);
+        }
+        .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        }
+        .card-content {
+        padding: 1rem 1.5rem;
+        }
+        .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #333;
+        }
+        .card ul {
+        padding-left: 1rem;
+        color: #555;
+        }
+        .card ul li {
+        margin-bottom: 0.4rem;
+        }
+
+        .card-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        padding: 2rem;
+        }
+
     </style>
 </head>
 <body >
@@ -182,7 +231,7 @@
         <div class="section" id="about">
             <h2>About Me</h2>
             <p>
-                Hey there! I'm a 2<sup>nd</sup> year student pursuing <b>Bachelor of Computer Applications (BCA)</b> at Amrita University, Mysore, with a solid CGPA of 9.36. I’m passionate about computer science and have a strong grasp of the fundamentals, including Operating Systems, Computer Architecture, C, Java, SQL, DBMS, Computer Networks, and web development. While my web development skills are currently at the foundational level, I am dedicated to continuously improving and expanding my expertise.<br><br>
+                Hey there! I'm a 3<sup>rd</sup> year student pursuing <b>Bachelor of Computer Applications (BCA)</b> at Amrita University, Mysore, with a solid CGPA of 9.41. I’m passionate about computer science and have a strong grasp of the fundamentals, including Operating Systems, Computer Architecture, C, Java, SQL, DBMS, Computer Networks, and web development. While my web development skills are currently at the foundational level, I am dedicated to continuously improving and expanding my expertise.<br><br>
                 Laying the groundwork now, sharpening expertise for what’s next!
             </p>
         </div>
@@ -203,7 +252,7 @@
                 <div>Software Engineering</div>
             </div>
         </div>
-
+        
         <div class="section" id="experience">
             <h2>Smart India Hackathon (SIH) 2024</h2>
             <p><b>Problem Statement:</b> AI-Powered Student Assistance Chatbot for the Department of Technical Education, Government of Rajasthan.</p>
@@ -225,6 +274,175 @@
             <h2>Social Volunteering</h2>
             <p><b>Nele Ashrama Experience:</b> Conducted a session on 'Contentment for Joyful Life' at Nele Ashrama, emphasizing gratitude, well-being, and self-awareness.</p>
         </div>
+
+
+        <div class="section" id="certificates">
+        <h2>Certificates</h2>
+        <div class="certificates">
+            <div class="card-grid">
+            <div class="card">
+                <img src="SQL.png" alt="SQL" width="500px">
+                <div class="card-content">
+                <div class="card-title">SQL (Basic)</div>
+                <ul>
+                   <li>Selected and filtered data with basic SQL queries</li>
+                   <li>Created and modified tables using DDL commands</li>
+                   <li>Applied aggregate functions and joins</li>
+
+                </ul>
+                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
+                    <img src="HackerRank_Icon.png" alt="HackerRank" style="width: 20px; height: 20px; object-fit: contain;">
+                    <small style="font-size: 0.68rem;">Hacker Rank</small>
+                </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="Elements of AI.png" alt="Elements of AI" width="500px">
+                <div class="card-content">
+                <div class="card-title">Elements of AI</div>
+                <ul>
+                    <li>Learned core AI concepts and problem-solving</li>
+                    <li>Explored machine learning and neural networks basics</li>
+                    <li>Examined real-world AI applications</li>
+                </ul>
+                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.4rem;">
+                    <img src="Helsinki-logo.png" alt="University of Helsinki" style="width: 30px; height: 30px; object-fit: contain;">
+                    <small style="font-size: 0.68rem;">University of Helsinki</small>
+                </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="AWS AI.png" alt=" Fundamentals of Machine Learning and Artificial Intelligence" width="500px">
+                <div class="card-content">
+                <div class="card-title">Fundamentals of ML & AI</div>
+                <ul>
+                    <li>Understood ML/AI core concepts</li>
+                    <li>Explored generative, supervised, unsupervised learning</li>
+                    <li>Identified AWS AI/ML services</li>
+                </ul>
+                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.3rem;">
+                    <img src="aws.png" alt="AWS" style="width: 25px; margin-top: 3px; height: 25px; object-fit: contain;">
+                    <small style="font-size: 0.68rem; margin-left:4px;">Amazon Web Services</small>
+                </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="Js.png" alt="JavaScript" width="500px">
+                <div class="card-content">
+                <div class="card-title">JavaScript</div>
+                <ul>
+                   <li>Learned JavaScript data types and syntax</li>
+                    <li>Studied control flow and functions</li>
+                    <li>Reviewed browser DOM and event basics</li>
+
+                </ul>
+                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
+                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
+                    <small style="font-size: 0.68rem;">Springboard</small>
+                </div>
+                </div>
+            </div>
+
+            
+            <div class="card">
+                <img src="se.png" alt="Software Engineering" width="500px">
+                <div class="card-content">
+                <div class="card-title">Software Engineering</div>
+                <ul>
+                    <li>Learned Agile software development fundamentals</li>
+                    <li>Applied software engineering principles</li>
+                    <li>Explored DevOps and project workflows</li>
+
+                </ul>
+                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
+                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
+                    <small style="font-size: 0.68rem;">Springboard</small>
+                </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="dt.png" alt="Design Thinking" width="500px">
+                <div class="card-content">
+                <div class="card-title">Design Thinking</div>
+                <ul>
+                    <li>Empathized with users and defined problem statements</li>
+                    <li>Ideated and prototyped solution concepts</li>
+                    <li>Tested prototypes and incorporated user feedback</li>
+                </ul>
+                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
+                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
+                    <small style="font-size: 0.68rem;">Springboard</small>
+                </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="is.png" alt="Interactive Skill" width="500px">
+                <div class="card-content">
+                <div class="card-title">Interactive Skills </div>
+                <ul>
+                    <li>Learned how to create interactive content</li>
+                    <li>Studied basic user engagement techniques</li>
+                    <li>Understood using feedback to improve learning</li>
+
+                </ul>
+                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
+                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
+                    <small style="font-size: 0.68rem;">Springboard</small>
+                </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="ps.png" alt="Presentation Skills" width="500px">
+                <div class="card-content">
+                <div class="card-title">Presentation Skills</div>
+                <ul>
+                   <li>Learned how to structure presentations clearly</li>
+                    <li>Practiced confident speaking and storytelling</li>
+                    <li>Used visuals to engage audiences</li>
+
+                </ul>
+                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
+                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
+                    <small style="font-size: 0.68rem;">Springboard</small>
+                </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="tm.png" alt="Time management" width="500px">
+                <div class="card-content">
+                <div class="card-title">Time management</div>
+                <ul>
+                   <li>Planned days using priority and time-block methods</li>
+                    <li>Organized tasks with calendars and to-do lists</li>
+                    <li>Improved focus through clear goal setting</li>
+
+                </ul>
+                <div style="display: inline-flex; align-items: center; gap: 0.25rem; margin-top: 0.5rem;">
+                    <img src="infosys-springboard.png" alt="Infosys Springboard" style="width: 30px; height: 30px; object-fit: contain;">
+                    <small style="font-size: 0.68rem;">Springboard</small>
+                </div>
+                </div>
+            </div>
+
+
+
+
+        </div> 
+        </div>
+        </div>
+
 
         <div class="section" id="contact">
             <h2>Contact</h2>
