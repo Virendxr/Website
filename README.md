@@ -1,7 +1,5 @@
 # Website
 
-# Virendar’s Portfolio
-
 This project is my personal portfolio website, I'm a BCA student at Amrita University, Mysore. The site uses CSS variables to implement a light and dark theme toggle, integrates Typed.js to animate rotating taglines in the header, and employs Flexbox alongside media queries to ensure a fully responsive layout. Subtle entrance and hover animations bring the content to life, and a grid of clickable certification cards links to externally hosted certificates.
 
 ## Getting Started
