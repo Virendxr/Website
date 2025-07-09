@@ -8,7 +8,7 @@ Clone the repository and open the index.html file in any modern browser—no bui
 
 ## Structure
 
-The root folder contains the main HTML file, a CSS stylesheet defining both light and dark mode variables, a JavaScript file for the theme toggle and Typed.js initialization, and an images directory for all asset files.
+The root folder contains the main HTML file, a CSS stylesheet defining both light and dark mode variables, a JavaScript file for the theme toggle, and an images directory for all asset files.
 
 ## Customization
 
